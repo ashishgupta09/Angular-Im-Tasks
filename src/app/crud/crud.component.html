@@ -1,0 +1,96 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1 class="text-center py-5">Employee List</h1>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col py-3">
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"  
+			(click)="clickToAddEmployee()">
+				Add Employee
+			</button>
+		</div>
+	</div>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Email</th>
+			<th scope="col">Phone</th>
+			<th scope="col">Address</th>
+			<th scope="col">Country</th>
+			<th scope="col">Pincode</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let data of employeeList">
+			<th scope="row">{{data.id}}</th>
+			<td>{{data.name}}</td>
+			<td>{{data.email}}</td>
+			<td>{{data.phone}}</td>
+			<td>{{data.address}}</td>
+			<td>{{data.country}}</td>
+			<td>{{data.pincode}}</td>
+			<td>
+				<button class="btn btn-danger" (click)="deleteEmployee(data.id)">Delete</button>
+				<button class="btn btn-dark ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateEmployee(data)">Update</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Employee Details</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form [formGroup]="employeeForm">
+				<div class="modal-body">
+					<div class="py-2">
+						<label class="py-2">Name</label>
+						<input type="text" class="form-control" formControlName="name">
+					</div>
+					<div class="py-2">
+						<label class="py-2">Email</label>
+						<input type="email" class="form-control" formControlName="email">
+					</div>
+					<div class="py-2">
+						<label class="py-2">Phone</label>
+						<input type="text" class="form-control" formControlName="phone">
+					</div>
+					<div class="py-2">
+						<label class="py-2">Address</label>
+						<input type="text" class="form-control" formControlName="address">
+					</div>
+					<div class="py-2">
+						<label class="py-2">Country</label>
+						<input type="text" class="form-control" formControlName="country">
+					</div>
+					<div class="py-2">
+						<label class="py-2">Pincode</label>
+						<input type="text" class="form-control" formControlName="pincode">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="postEmployee()" *ngIf="addEmployee">Add
+						Employee
+					</button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateEmployeeData()" *ngIf="updateEmploye">
+						Update Employee
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
