@@ -1,0 +1,121 @@
+<div class="form-container">
+	<div class="inner-container">
+		<div class="title">
+			Registration Form
+		</div>
+		<form action="#" [formGroup]="resgistrationForm">
+			<div class="user-details">
+
+				<div class="input-box">
+					<span class="details">Full Name</span>
+					<input type="text" placeholder="Enter your name" formControlName="name">
+					<span class="text-danger" *ngIf="(resgistrationForm.controls['name'].touched || submitted) 
+					&& resgistrationForm.controls['name'].errors ">
+						Name is required
+					</span>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Username</span>
+					<input type="text" placeholder="Enter your username" formControlName="userName">
+
+					<span class="text-danger"
+						*ngIf="resgistrationForm.get('userName')?.hasError('required') && (resgistrationForm.get('userName')?.touched || submitted)">
+						User Name is required.
+					</span>
+
+					<span class="text-danger"
+						*ngIf="resgistrationForm.get('userName')?.hasError('userNameNotAvailable') && (resgistrationForm.get('userName')?.touched || submitted)">
+						User Name is not available.
+					</span>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Email</span>
+					<input type="email" placeholder="Enter your email" formControlName="email">
+
+					<span class="text-danger" *ngIf="(resgistrationForm.get('email')?.hasError('required') && 
+                     (resgistrationForm.get('email')?.touched || submitted))">
+						Email is required.
+					</span>
+
+					<span class="text-danger" *ngIf="(resgistrationForm.get('email')?.hasError('email') && 
+                        resgistrationForm.get('email')?.touched)">
+						Enter a valid email address.
+					</span>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Phone Number</span>
+					<input type="number" placeholder="Enter your phone number" formControlName="phone">
+
+					<!-- Validation Error Messages -->
+					<span class="text-danger"
+						*ngIf="(resgistrationForm.get('phone')?.touched || submitted) && resgistrationForm.get('phone')?.hasError('required')">
+						Phone Number is required.
+					</span>
+					<span class="text-danger"
+						*ngIf="resgistrationForm.get('phone')?.touched && resgistrationForm.get('phone')?.hasError('pattern')">
+						Enter a valid phone number (10 digits only).
+					</span>
+				</div>
+				
+				<div class="input-box">
+					<span class="details">Password</span>
+					<input type="password" formControlName="password" placeholder="Enter your password">
+
+					<span class="text-danger"
+						*ngIf="(resgistrationForm.get('password')?.touched || submitted) && resgistrationForm.get('password')?.hasError('required')">
+						Password is required.
+					</span>
+					<span class="text-danger"
+						*ngIf="resgistrationForm.get('password')?.touched && resgistrationForm.get('password')?.hasError('invalidPassword')">
+						Password must have at least 8 characters, one uppercase, one lowercase, and one number.
+					</span>
+				</div>
+
+				<div class="input-box">
+					<span class="details">Confirm Password</span>
+					<input type="password" formControlName="confirmPassword" placeholder="Confirm your password">
+
+					<span class="text-danger"
+						*ngIf="(resgistrationForm.get('confirmPassword')?.touched || submitted) && resgistrationForm.get('confirmPassword')?.hasError('required')">
+						Confirm Password is required.
+					</span>
+					<span class="text-danger"
+						*ngIf="resgistrationForm.get('confirmPassword')?.touched && resgistrationForm.get('confirmPassword')?.hasError('passwordMismatch')">
+						Passwords do not match.
+					</span>
+				</div>
+
+				<div class="gender-details">
+					<input type="radio" name="gender" id="dot-1" value="Male" formControlName="gender">
+					<input type="radio" name="gender" id="dot-2" value="Female" formControlName="gender">
+					<input type="radio" name="gender" id="dot-3" value="Prefer not to say" formControlName="gender">
+					<div class="gender-title">Gender</div>
+					<div class="category">
+						<label for="dot-1">
+							<span class="dot one"></span>
+							<span class="gender">Male</span>
+						</label>
+						<label for="dot-2">
+							<span class="dot two"></span>
+							<span class="gender">Female</span>
+						</label>
+						<label for="dot-3">
+							<span class="dot three"></span>
+							<span class="gender">Pefer not to say</span>
+						</label>
+					</div>
+					<span class="text-danger"
+						*ngIf="(resgistrationForm.get('gender')?.touched || submitted) && resgistrationForm.get('gender')?.hasError('required')">
+						Please select your gender.
+					</span>
+				</div>
+			</div>
+			<div class="button">
+				<input type="submit" placeholder="Register" (click)="onSubmit()">
+			</div>
+		</form>
+	</div>
+</div>
