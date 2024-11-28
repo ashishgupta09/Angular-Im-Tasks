@@ -1,0 +1,36 @@
+.container h2{
+	padding: 30px;
+	text-align: center;
+	font-size: 50px;
+	color: brown;
+	text-transform: uppercase;
+}
+
+.list-board{
+	width: 100%;
+	margin-top: 20px;
+}
+
+.list{
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	padding: 20px;
+	margin: 0px auto;
+}
+
+.column-header{
+	background-color: cadetblue;
+	color: white;
+	padding: 20px;
+	font-size: 25px;
+	text-align: center;
+	font-weight: 500;
+}
+
+.task{
+	padding: 10px;
+	font-size: 22px;
+	text-align: center;
+	font-weight: 600;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	margin-bottom: 20px;
+}

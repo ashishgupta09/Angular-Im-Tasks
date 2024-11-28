@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row drop">
+		<h2>
+			Drag N Drop
+		</h2>
+	</div>
+	<div class="row">
+		<div class="col-12 board">
+			<div class="list-board">
+				<div class="row d-flex g-lg-4">
+					
+					<!-- To Do Column -->
+					<div class="col-lg-4 col-md-6 col-sm-12 list">
+						<div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'To Do')">
+							<div class="column-header">To Do</div>
+							<div class="task" draggable="true" *ngFor="let list of filterTaskList('To Do')"
+								(dragstart)="onDragStart(list)">
+								<strong>{{ list.ticketId }}</strong>
+								<div>{{ list.ticketName }}</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- In Progress Column -->
+					<div class="col-lg-4 col-md-6 col-sm-12 list">
+						<div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'In Progress')">
+							<div class="column-header">In Progress</div>
+							<div class="task" draggable="true" *ngFor="let list of filterTaskList('In Progress')"
+								(dragstart)="onDragStart(list)">
+								<strong>{{ list.ticketId }}</strong>
+								<div>{{ list.ticketName }}</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Done Column -->
+					<div class="col-lg-4 col-md-6 col-sm-12 list">
+						<div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'Completed')">
+							<div class="column-header">Done</div>
+							<div class="task" draggable="true" *ngFor="let list of filterTaskList('Completed')"
+								(dragstart)="onDragStart(list)">
+								<strong>{{ list.ticketId }}</strong>
+								<div>{{ list.ticketName }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
