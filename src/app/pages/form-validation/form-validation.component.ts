@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CustomValidationService } from '../../service/custom-validation.service';
+import { CustomValidationService } from '../../core/service/custom-validation.service';
 
 @Component({
   selector: 'app-form-validation',

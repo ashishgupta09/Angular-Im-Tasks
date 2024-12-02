@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { JsonCrudComponent } from './json-crud/json-crud.component';
-import { CrudComponent } from './crud/crud.component';
-import { FormValidationComponent } from './form-validation/form-validation.component';
-import { DragDropComponent } from './drag-drop/drag-drop.component';
-import { PrintDataIntoExcelComponent } from './print-data-into-excel/print-data-into-excel.component';
-import { ParentComponent } from './parent/parent.component';
+import { JsonCrudComponent } from './pages/json-crud/json-crud.component';
+import { CrudComponent } from './pages/crud/crud.component';
+import { DragDropComponent } from './pages/drag-drop/drag-drop.component';
+import { PrintDataIntoExcelComponent } from './pages/print-data-into-excel/print-data-into-excel.component';
+import { ParentComponent } from './pages/parent/parent.component';
+import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 
 export const routes: Routes = [
 	{ path: '', component: FormValidationComponent },

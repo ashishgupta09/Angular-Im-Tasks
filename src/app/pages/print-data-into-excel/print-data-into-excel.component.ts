@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Employee } from '../../model/employee';
-import { ApiService } from '../../service/api.service';
+import { ApiService } from '../../core/service/api.service';
 import * as xls from 'xlsx';
+import { Employee } from '../../core/model/employee';
 
 @Component({
   selector: 'app-print-data-into-excel',

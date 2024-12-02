@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Employee } from '../../model/employee';
-import { ApiService } from '../../service/api.service';
+import { ApiService } from '../../core/service/api.service';
+import { Employee } from '../../core/model/employee';
 
 @Component({
   selector: 'app-crud',
