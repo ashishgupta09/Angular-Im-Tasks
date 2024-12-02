@@ -1,0 +1,17 @@
+<div class="child-container">
+	<h3>User List</h3>
+	<ul class="my-3">
+		<li *ngFor="let user of users">
+			<strong>{{ user.name }}</strong> - {{ user.email }}
+		</li>
+	</ul>
+</div>
+
+<!-- form -->
+<div class="child-container">
+	<h3>Add a New User</h3>
+	<input type="number" [(ngModel)]="id" placeholder="Enter ID" />
+	<input type="text" [(ngModel)]="name" placeholder="Enter Name" />
+	<input type="email" [(ngModel)]="email" placeholder="Enter Email" />
+	<button (click)="addUser()">Add User</button>
+</div>

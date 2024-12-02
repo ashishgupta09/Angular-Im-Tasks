@@ -4,6 +4,7 @@ import { CrudComponent } from './crud/crud.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { PrintDataIntoExcelComponent } from './print-data-into-excel/print-data-into-excel.component';
+import { ParentComponent } from './parent/parent.component';
 
 export const routes: Routes = [
 	{ path: '', component: FormValidationComponent },
@@ -11,4 +12,5 @@ export const routes: Routes = [
 	{ path: 'json-crud', component: JsonCrudComponent },
 	{ path: 'drag-drop', component: DragDropComponent },
 	{ path: 'excel-data', component: PrintDataIntoExcelComponent },
+	{ path: 'parent', component: ParentComponent },
 ];
