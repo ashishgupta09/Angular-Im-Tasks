@@ -864,5 +864,37 @@
       "country": "Syria",
       "pincode": null
     }
+  ],
+  "sales": [
+    {
+      "year": 2015,
+      "amount": 5000,
+      "colorcode": "green"
+    },
+    {
+      "year": 2016,
+      "amount": 6000,
+      "colorcode": "yellow"
+    },
+    {
+      "year": 2017,
+      "amount": 2000,
+      "colorcode": "red"
+    },
+    {
+      "year": 2018,
+      "amount": 7000,
+      "colorcode": "blue"
+    },
+    {
+      "year": 2019,
+      "amount": 4000,
+      "colorcode": "orange"
+    },
+    {
+      "year": 2020,
+      "amount": 8000,
+      "colorcode": "pink"
+    }
   ]
 }

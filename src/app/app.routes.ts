@@ -5,6 +5,7 @@ import { DragDropComponent } from './pages/drag-drop/drag-drop.component';
 import { PrintDataIntoExcelComponent } from './pages/print-data-into-excel/print-data-into-excel.component';
 import { ParentComponent } from './pages/parent/parent.component';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
+import { ChartComponent } from './pages/chart/chart.component';
 
 export const routes: Routes = [
 	{ path: '', component: FormValidationComponent },
@@ -13,4 +14,6 @@ export const routes: Routes = [
 	{ path: 'drag-drop', component: DragDropComponent },
 	{ path: 'excel-data', component: PrintDataIntoExcelComponent },
 	{ path: 'parent', component: ParentComponent },
+	{ path: 'chart', component: ChartComponent },
+
 ];
