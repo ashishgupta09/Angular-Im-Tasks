@@ -1,0 +1,11 @@
+<div class="otp-header mt-5">
+	<h1 class="text-center text-warning">OTP Container</h1>
+</div>
+<div class="otp-container">
+	<div class="inner-container">
+		<input type="text" maxlength="1" (keyup)="move($event, null, $event.target, otp2)" #otp1 />
+		<input type="text" maxlength="1" (keyup)="move($event, otp1, $event.target, otp3)" #otp2 />
+		<input type="text" maxlength="1" (keyup)="move($event, otp2, $event.target, otp4)" #otp3 />
+		<input type="text" maxlength="1" (keyup)="move($event, otp3, $event.target, null)" #otp4 />
+	</div>
+</div>

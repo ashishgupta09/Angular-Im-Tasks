@@ -6,6 +6,7 @@ import { PrintDataIntoExcelComponent } from './pages/print-data-into-excel/print
 import { ParentComponent } from './pages/parent/parent.component';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { ChartComponent } from './pages/chart/chart.component';
+import { OtpFieldComponent } from './pages/otp-field/otp-field.component';
 
 export const routes: Routes = [
 	{ path: '', component: FormValidationComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
 	{ path: 'excel-data', component: PrintDataIntoExcelComponent },
 	{ path: 'parent', component: ParentComponent },
 	{ path: 'chart', component: ChartComponent },
+	{ path: 'otp', component: OtpFieldComponent },
 
 ];
