@@ -1,0 +1,49 @@
+.form-container {
+	max-width: 400px;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #f9f9f9;
+	margin-top: 50px;
+}
+
+form div {
+	margin-bottom: 15px;
+}
+
+form label {
+	display: block;
+	font-weight: bold;
+}
+
+form input {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	box-sizing: border-box;
+}
+
+form span {
+	color: red;
+	font-size: 0.875em;
+}
+
+button {
+	padding: 10px 15px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:disabled {
+	background-color: #ccc;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

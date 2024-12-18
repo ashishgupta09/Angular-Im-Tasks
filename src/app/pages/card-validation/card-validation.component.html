@@ -1,0 +1,54 @@
+<div class="form-container">
+	<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+	   <!-- Card Number -->
+	   <div>
+		  <label for="cardNo">Card Number</label>
+		  <input type="number" id="cardNo" formControlName="cardNo" placeholder="Enter 16-digit card number"
+			 maxlength="19" (input)="onCardNumber($event)" />
+ 
+		  <span class="text-danger"
+			 *ngIf="userForm.get('cardNo')?.touched && userForm.get('cardNo')?.hasError('required')">
+			 Card Number is required.
+		  </span>
+		  <span class="text-danger"
+			 *ngIf="userForm.get('cardNo')?.touched && userForm.get('cardNo')?.hasError('pattern')">
+			 Card Number must be exactly 16 digits.
+		  </span>
+	   </div>
+ 
+	   <!-- Expire Date -->
+	   <div>
+		  <label for="expireDate">Expire Date</label>
+		  <input type="text" id="expireDate" formControlName="expireDate" placeholder="MM/YYYY" maxlength="7" />
+		  <span class="text-danger"
+			 *ngIf="userForm.get('expireDate')?.touched && userForm.get('expireDate')?.hasError('required')">
+			 Expire Date is required.
+		  </span>
+		  <span class="text-danger" *ngIf="userForm.get('expireDate')?.hasError('invalidMonth')">
+			 Enter a valid month (01 to 12).
+		  </span>
+		  <span class="text-danger" *ngIf="userForm.get('expireDate')?.hasError('missingSlash')">
+			 Format must include "/" (e.g., MM/YYYY).
+		  </span>
+		  <span class="text-danger" *ngIf="userForm.get('expireDate')?.hasError('invalidYear')">
+			 Year must be between 2020 and 2100.
+		  </span>
+	   </div>
+ 
+	   <!-- CVV -->
+	   <div>
+		  <label for="cvv">CVV</label>
+		  <input type="number" id="cvv" formControlName="cvv" placeholder="Enter CVV" maxlength="3"
+			 (input)="onInput($event)" />
+		  <span class="text-danger" *ngIf="userForm.get('cvv')?.touched && userForm.get('cvv')?.hasError('required')">
+			 CVV is required.
+		  </span>
+		  <span class="text-danger" *ngIf="userForm.get('cvv')?.touched && userForm.get('cvv')?.hasError('pattern')">
+			 CVV must be 3 digits.
+		  </span>
+	   </div>
+ 
+	   <!-- Submit Button -->
+	   <button type="submit" [disabled]="userForm.invalid">Submit</button>
+	</form>
+ </div>

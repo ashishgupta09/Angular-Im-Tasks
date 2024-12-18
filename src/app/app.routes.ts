@@ -7,10 +7,12 @@ import { ParentComponent } from './pages/parent/parent.component';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { ChartComponent } from './pages/chart/chart.component';
 import { OtpFieldComponent } from './pages/otp-field/otp-field.component';
+import { CardValidationComponent } from './pages/card-validation/card-validation.component';
 
 export const routes: Routes = [
 	{ path: '', component: FormValidationComponent },
 	{ path: 'crud', component: CrudComponent },
+	{ path: 'card-validation', component: CardValidationComponent },
 	{ path: 'json-crud', component: JsonCrudComponent },
 	{ path: 'drag-drop', component: DragDropComponent },
 	{ path: 'excel-data', component: PrintDataIntoExcelComponent },
